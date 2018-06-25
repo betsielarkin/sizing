@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <style>
+
+  body {
+  margin: 25px;
+ }
+  .slider {
+  	width: 300px;
+  	margin: 10px 0 30px 0;
+  }
+  #custom-handle1, #custom-handle2, #custom-handle3 {
+    width: 3em;
+    height: 1.6em;
+    top: 50%;
+    margin-top: -.8em;
+    text-align: center;
+    line-height: 1.6em;
+  }
+  #container {
+  	width: 120px;
+    height: 100px;
+    border: 1px solid;
+    font-size: 50px;
+    text-align: center;
+	vertical-align: middle;
+	line-height: 100px; 
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+	$( function() {
+	$( "#tabs" ).tabs();
+	  } );
+
+  $( function() {
+    var handle = $( "#custom-handle1" );
+    $( "#height" ).slider({
+    	min: 56,
+    	max: 77,
+    	slide: calculate,
+      	change: calculate,
+      create: function() {
+        handle.text( $( this ).slider( "value" ) );
+      },
+      slide: function( event, ui ) {
+        handle.text( ui.value );
+      }
+    });
+  } );
+  $( function() {
+    var handle = $( "#custom-handle2" );
+    $( "#waist" ).slider({
+    	min: 24,
+    	max: 50,
+    	slide: calculate,
+      	change: calculate,
+      create: function() {
+        handle.text( $( this ).slider( "value" ) );
+      },
+      slide: function( event, ui ) {
+        handle.text( ui.value );
+      }
+    });
+  } );
+  $( function() {
+    var handle = $( "#custom-handle3" );
+    $( "#hips" ).slider({
+    	min: 33,
+    	max: 60,
+    	slide: calculate,
+      	change: calculate,
+      create: function() {
+        handle.text( $( this ).slider( "value" ) );
+      },
+      slide: function( event, ui ) {
+        handle.text( ui.value );
+      }
+    });
+  } );
+
+  </script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js"> </script>
+<script>
+_u = _.noConflict();
+</script>
+</head>
+<body>
+
+<script>
+calculate = function()
+{
+    var height = $( "#height" ).slider( "value" );
+    var waist = $( "#waist" ).slider( "value" );
+    var hips = $( "#hips" ).slider( "value" );
+
+var sizes_short = { 
+24: [{s: 'S', h1: 33, h2: 39}],
+25: [{s: 'S', h1: 33, h2: 40}],
+26: [{s: 'S', h1: 33, h2: 41}],
+27: [{s: 'S', h1: 33, h2: 41}, {s: 'M', h1: 42, h2: 42}],
+28: [{s: 'S', h1: 33, h2: 39}, {s: 'M', h1: 40, h2: 43}],
+29: [{s: 'S', h1: 33, h2: 38}, {s: 'M', h1: 39, h2: 44}],
+30: [{s: 'S', h1: 33, h2: 35}, {s: 'M', h1: 36, h2: 45}],
+31: [{s: 'M', h1: 33, h2: 44}, {s: 'L', h1: 45, h2: 46}],
+32: [{s: 'M', h1: 33, h2: 42}, {s: 'L', h1: 43, h2: 47}],
+33: [{s: 'M', h1: 33, h2: 40}, {s: 'L', h1: 41, h2: 48}],
+34: [{s: 'L', h1: 33, h2: 46}, {s: 'XL', h1: 47, h2: 49}],
+35: [{s: 'L', h1: 34, h2: 45}, {s: 'XL', h1: 46, h2: 50}],
+36: [{s: 'L', h1: 35, h2: 42}, {s: 'XL', h1: 43, h2: 51}],
+37: [{s: 'XL', h1: 36, h2: 52}],
+38: [{s: 'XL', h1: 37, h2: 52}, {s: '2XL', h1: 53, h2: 53}],
+39: [{s: 'XL', h1: 38, h2: 51}, {s: '2XL', h1: 52, h2: 54}],
+40: [{s: 'XL', h1: 39, h2: 46}, {s: '2XL', h1: 47, h2: 55}],
+41: [{s: '2XL', h1: 40, h2: 56}],
+42: [{s: '2XL', h1: 41, h2: 57}],
+43: [{s: '2XL', h1: 42, h2: 58}],
+44: [{s: '2XL', h1: 43, h2: 59}],
+45: [{s: '2XL', h1: 44, h2: 57}, {s: '3XL', h1: 58, h2: 60}],
+46: [{s: '2XL', h1: 45, h2: 55}, {s: '3XL', h1: 56, h2: 60}],
+47: [{s: '2XL', h1: 46, h2: 54}, {s: '3XL', h1: 55, h2: 60}],
+48: [{s: '3XL', h1: 47, h2: 60}],
+49: [{s: '3XL', h1: 48, h2: 60}],
+50: [{s: '3XL', h1: 49, h2: 60}]};
+
+var sizes_tall = { 
+24: [{s: 'S', h1: 33, h2: 39}],
+25: [{s: 'S', h1: 33, h2: 40}],
+26: [{s: 'S', h1: 33, h2: 41}],
+27: [{s: 'S', h1: 33, h2: 40}, {s: 'M', h1: 41, h2: 42}],
+28: [{s: 'S', h1: 33, h2: 39}, {s: 'M', h1: 40, h2: 43}],
+29: [{s: 'S', h1: 33, h2: 35}, {s: 'M', h1: 36, h2: 44}],
+30: [{s: 'M', h1: 33, h2: 45}],
+31: [{s: 'M', h1: 33, h2: 44}, {s: 'L', h1: 45, h2: 46}],
+32: [{s: 'M', h1: 33, h2: 39}, {s: 'L', h1: 40, h2: 47}],
+33: [{s: 'M', h1: 33, h2: 45}, {s: 'L', h1: 46, h2: 48}],
+34: [{s: 'L', h1: 33, h2: 44}, {s: 'XL', h1: 45, h2: 49}],
+35: [{s: 'L', h1: 34, h2: 42}, {s: 'XL', h1: 43, h2: 50}],
+36: [{s: 'L', h1: 35, h2: 36}, {s: 'XL', h1: 37, h2: 51}],
+37: [{s: 'XL', h1: 36, h2: 50}, {s: '2XL', h1: 51, h2: 52}],
+38: [{s: 'XL', h1: 37, h2: 49}, {s: '2XL', h1: 50, h2: 53}],
+39: [{s: 'XL', h1: 38, h2: 48}, {s: '2XL', h1: 49, h2: 54}],
+40: [{s: 'XL', h1: 39, h2: 42}, {s: '2XL', h1: 43, h2: 55}],
+41: [{s: '2XL', h1: 40, h2: 56}],
+42: [{s: '2XL', h1: 41, h2: 57}],
+43: [{s: '2XL', h1: 42, h2: 58}],
+44: [{s: '2XL', h1: 43, h2: 57}, {s: '3XL', h1: 58, h2: 59}],
+45: [{s: '2XL', h1: 44, h2: 56}, {s: '3XL', h1: 57, h2: 60}],
+46: [{s: '2XL', h1: 45, h2: 53}, {s: '3XL', h1: 54, h2: 60}],
+47: [{s: '2XL', h1: 46, h2: 51}, {s: '3XL', h1: 52, h2: 60}],
+48: [{s: '3XL', h1: 47, h2: 60}],
+49: [{s: '3XL', h1: 48, h2: 60}],
+50: [{s: '3XL', h1: 49, h2: 60}]};
+
+var obj = (height < 64 ? _u.find(sizes_short[waist], function(o) { return (o.h1 <= hips && o.h2 >= hips);} ) : _u.find(sizes_tall[waist], function(o) { return (o.h1 <= hips && o.h2 >= hips);} ) );
+
+if (typeof obj != "undefined") {
+	document.getElementById('container').innerHTML = obj.s;
+} else {
+	document.getElementById('container').innerHTML = "N/A";
+}
+
+}
+
+</script>
+<h1>Sizing for Sculptwear</h1>
+
+<h3>About this tool</h3>
+Note: this Size Calculator will help you find your size in Sculptwear. Once you determine your size, you will have to enter it separately into our rewards survey, which we'll send to you via email through our partner BackerKit. The surveys will be emailed to you between April 9-11th, and should you not get them in that time period, please email us at info@honeylove.ly.
+
+<h3>How do I choose my size?</h3>
+We all have different fit preferences in shapewear (i.e. firm vs roomy), so we suggest you first consider which size you wear in the well-known shapewear brands. 90% of the time you can order the same size in HoneyLove that you wear in brands like Maidenform, Spanx, etc.
+<br><br>
+The alternative approach is to get your size based on your measurements, which is what this Size Calculator will help you do. All you need is your waist, hips, and height measurements in inches.
+
+<h3>Please enter your measurements:</h3>
+
+Height (inches)
+<div id="height" class="slider">
+  <div id="custom-handle1" class="ui-slider-handle"></div>
+</div>
+Waist (inches)<br>
+Note: measure around your waist approximately two inches above your belly button.
+<div id="waist" class="slider">
+  <div id="custom-handle2" class="ui-slider-handle"></div>
+</div>
+Hips (inches)<br>
+Note: measure around the fullest part of your hips.
+<div id="hips" class="slider">
+  <div id="custom-handle3" class="ui-slider-handle"></div>
+</div>
+
+<h3>Your size:</h3>
+<div id="container"></div>
+<br>
+**************************
+<br>
+<h3>Optional: reference charts</h3>
+The size you received above can be cross-referenced in the charts below. This will give you a sense for how close you are to a higher or lower size.
+<br><br>
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Are you under 5'4"?</a></li>
+    <li><a href="#tabs-2">Are you 5'4" or taller?</a></li>
+  </ul>
+  <div id="tabs-1">
+<img src="https://i.imgur.com/cICZuN0.png">
+  </div>
+  <div id="tabs-2">
+<img src="https://i.imgur.com/szzuZk5.png">
+  </div>
+</div>
+
+</body>
+</html>
