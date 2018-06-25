@@ -13,10 +13,11 @@
   	margin: 10px 0 30px 0;
   }
   #custom-handle1, #custom-handle2, #custom-handle3 {
-    width: 3em;
-    height: 1.6em;
-    top: 50%;
+    width: 2em;
+    height: 3em;
+    top: 0%;
     margin-top: -.8em;
+    margin-left: -1px;
     text-align: center;
     line-height: 1.6em;
   }
@@ -32,7 +33,7 @@
   </style>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+  <script src="jquery.ui.touch-punch.min.js"></script>
   <script>
 	$( function() {
 	$( "#tabs" ).tabs();
@@ -164,21 +165,25 @@ if (typeof obj != "undefined") {
 }
 }
 </script>
-<h3>Height (inches)</h3>
+<h3>Height (inches):</h3>
 <div id="height" class="slider">
   <div id="custom-handle1" class="ui-slider-handle"></div>
 </div>
-<h3>Waist (inches)</h3>
+<h3 style="margin-top:40px;">Waist (inches):</h3>
+<div style="margin:-15px 0 18px 0;">
 (two inches above your belly button)
+</div>
 <div id="waist" class="slider">
   <div id="custom-handle2" class="ui-slider-handle"></div>
 </div>
-<h3>Hips (inches)</h3>
+<h3 style="margin-top:40px;">Hips (inches):</h3>
+<div style="margin:-15px 0 18px 0;">
 (around the fullest part of your hips)
+</div>
 <div id="hips" class="slider">
   <div id="custom-handle3" class="ui-slider-handle"></div>
 </div>
-<h3>Your size:</h3>
+<h3 style="margin-top:40px;">Your size:</h3>
 <div id="container"></div>
 </body>
 </html>
