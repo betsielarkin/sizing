@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <style>
-
   body {
   margin: 25px;
  }
@@ -37,7 +36,6 @@
 	$( function() {
 	$( "#tabs" ).tabs();
 	  } );
-
   $( function() {
     var handle = $( "#custom-handle1" );
     $( "#height" ).slider({
@@ -83,7 +81,6 @@
       }
     });
   } );
-
   </script>
 
 
@@ -102,7 +99,6 @@ calculate = function()
     var height = $( "#height" ).slider( "value" );
     var waist = $( "#waist" ).slider( "value" );
     var hips = $( "#hips" ).slider( "value" );
-
 var sizes_short = { 
 24: [{s: 'S', h1: 33, h2: 39}],
 25: [{s: 'S', h1: 33, h2: 40}],
@@ -131,7 +127,6 @@ var sizes_short = {
 48: [{s: '3XL', h1: 47, h2: 60}],
 49: [{s: '3XL', h1: 48, h2: 60}],
 50: [{s: '3XL', h1: 49, h2: 60}]};
-
 var sizes_tall = { 
 24: [{s: 'S', h1: 33, h2: 39}],
 25: [{s: 'S', h1: 33, h2: 40}],
@@ -160,36 +155,39 @@ var sizes_tall = {
 48: [{s: '3XL', h1: 47, h2: 60}],
 49: [{s: '3XL', h1: 48, h2: 60}],
 50: [{s: '3XL', h1: 49, h2: 60}]};
-
 var obj = (height < 64 ? _u.find(sizes_short[waist], function(o) { return (o.h1 <= hips && o.h2 >= hips);} ) : _u.find(sizes_tall[waist], function(o) { return (o.h1 <= hips && o.h2 >= hips);} ) );
-
 if (typeof obj != "undefined") {
 	document.getElementById('container').innerHTML = obj.s;
 } else {
 	document.getElementById('container').innerHTML = "N/A";
 }
-
 }
-
 </script>
-<h3>Please enter your measurements:</h3>
-
-Height (inches)
+<div style="float:left;margin-right:30px;">
+<div style="background:#d3d3d3; padding:1px 5px 1px 15px;margin-bottom:1px;">
+<h3>Height (inches)</h3>
 <div id="height" class="slider">
   <div id="custom-handle1" class="ui-slider-handle"></div>
 </div>
-Waist (inches)<br>
+</div>
+<div style="background:#d3d3d3; padding:1px 5px 1px 15px;margin-bottom:1px;">
+<h3>Waist (inches)</h3>
 Note: measure around your waist approximately<br>two inches above your belly button.
 <div id="waist" class="slider">
   <div id="custom-handle2" class="ui-slider-handle"></div>
 </div>
-Hips (inches)<br>
+</div>
+<div style="background:#d3d3d3; padding:1px 5px 1px 15px;margin-bottom:1px;">
+<h3>Hips (inches)</h3>
 Note: measure around the fullest part of your hips.
 <div id="hips" class="slider">
   <div id="custom-handle3" class="ui-slider-handle"></div>
 </div>
-
+</div>
+</div>
+<div style="float:left;">
 <h3>Your size:</h3>
 <div id="container"></div>
+</div>
 </body>
 </html>
