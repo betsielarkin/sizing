@@ -22,6 +22,9 @@
 
 		.desc {
 			color: #a3a3a3;
+			font-size: 14px;
+			font-weight: normal;
+			-webkit-font-smoothing: antialiased;
 		}
 
 		.nav-link.active {
@@ -198,15 +201,15 @@ if (typeof obj != "undefined") {
 
   <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 		<div class="measure-content">
-	    <h3>Height (inches): <span id="heightv">56</span></h3>
+	    <h3>Height: <span id="heightv">56</span> inches</h3>
 	    <input id="height" data-slider-id='ex1Slider' type="text" data-slider-min="56" data-slider-max="77" data-slider-step="1" data-slider-value="56" />
-	    <h3>Waist (inches): <span id="waistv">24</span></h3>
-	    <div class="desc">
+	    <h3>Waist: <span id="waistv">24</span> inches</h3>
+	    <div class="desc" style:"margin-top:20px;">
 	    (two inches above your belly button)
 	    </div>
 	    <input id="waist" data-slider-id='ex2Slider' type="text" data-slider-min="24" data-slider-max="50" data-slider-step="1" data-slider-value="24" />
-	    <h3>Hips (inches): <span id="hipsv">33</span></h3>
-	    <div class="desc">
+	    <h3>Hips: <span id="hipsv">33</span> inches</h3>
+	    <div class="desc" style:"margin-top:20px;">
 	    (around the fullest part of your hips)
 	    </div>
 	    <input id="hips" data-slider-id='ex3Slider' type="text" data-slider-min="33" data-slider-max="60" data-slider-step="1" data-slider-value="33" />
@@ -217,19 +220,19 @@ if (typeof obj != "undefined") {
 
 	  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
 	  	<div class="measure-content">
-		    <h3>Height (cm): <span id="heightvm">142</span></h3>
+		    <h3>Height: <span id="heightvm">142</span> cm</h3>
 		    <input id="heightm" data-slider-id='ex4Slider' type="text" data-slider-min="142" data-slider-max="195" data-slider-step="1" data-slider-value="142" />
-		    <h3>Waist (cm): <span id="waistvm">60</span></h3>
-		    <div class="desc">
-		    (5 cms above your belly button)
+		    <h3>Waist: <span id="waistvm">60</span> cm</h3>
+		    <div class="desc" style:"margin-top:20px;">
+		    (5 cm above your belly button)
 		    </div>
 		    <input id="waistm" data-slider-id='ex5Slider' type="text" data-slider-min="60" data-slider-max="127" data-slider-step="1" data-slider-value="60" />
-		    <h3>Hips (cm): <span id="hipsvm">83</span></h3>
-		    <div class="desc">
+		    <h3>Hips: <span id="hipsvm">83</span> cm</h3>
+		    <div class="desc" style:"margin-top:20px;">
 		    (around the fullest part of your hips)
 		    </div>
 		    <input id="hipsm" data-slider-id='ex6Slider' type="text" data-slider-min="83" data-slider-max="152" data-slider-step="1" data-slider-value="83" />
-		    <h3 style="text-align:center;">Your size:</h3>
+		    <h3 style="text-align:center;margin-bottom:30px;">Your size:</h3>
 		</div>
 	    <div id="container2"></div>
   	</div>
