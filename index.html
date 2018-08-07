@@ -4,59 +4,71 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    .slider {
-      width: 230px;
-      margin: 10px 0 30px 0;
-    }
-    .slider-handle {
-    	background-color: #dc5351 !important;
-    	background-image: linear-gradient(to bottom, #dc5351 0%, #d94442 100%) !important;
-	}
+		.slider {
+		  width: 230px;
+		  margin: 10px 0 30px 0;
+		}
 
-	.nav-link.active {
-		background-color: #dc5351 !important;
-	}
+		.slider-handle {
+			background-color: #dc5351 !important;
+			background-image: linear-gradient(to bottom, #dc5351 0%, #d94442 100%) !important;
+		}
 
-	.nav-link.active {
-		color: white !important;
-		background-color: #dc5351 !important;
-	}
+		.measure-content {
+			text-align: left;
+			width: 270px;
+			margin: 0 auto;
+		}
 
-	.nav-item a {
-		color: #dc5351 !important;
-	}
+		.desc {
+			color: #a3a3a3;
+		}
 
-    h3 {
-      font-size: 1.2em !important;
-      margin-bottom: -2px !important;
-    }
+		.nav-link.active {
+			background-color: #dc5351 !important;
+		}
 
-    #container {
-      width: 120px;
-      height: 100px;
-      border: 1px solid;
-      font-size: 50px;
-      text-align: center;
-      vertical-align: middle;
-      line-height: 100px; 
-      margin: 0 auto;
-    }
-    #container2 {
-      width: 120px;
-      height: 100px;
-      border: 1px solid;
-      font-size: 50px;
-      text-align: center;
-      vertical-align: middle;
-      line-height: 100px; 
-      margin: 0 auto;
-    }
-    .container {
-      width: 100%;
-      padding: 0 15px;
-      text-align: center;
-    }
+		.nav-link.active {
+			color: white !important;
+			background-color: #dc5351 !important;
+		}
+
+		.nav-item a {
+			color: #dc5351 !important;
+		}
+
+	  h3 {
+	    font-size: 1.2em !important;
+	    margin-bottom: -2px !important;
+	  }
+
+	  #container {
+	    width: 120px;
+	    height: 100px;
+	    border: 1px solid;
+	    font-size: 50px;
+	    text-align: center;
+	    vertical-align: middle;
+	    line-height: 100px; 
+	    margin: 0 auto;
+	  }
+	  #container2 {
+	    width: 120px;
+	    height: 100px;
+	    border: 1px solid;
+	    font-size: 50px;
+	    text-align: center;
+	    vertical-align: middle;
+	    line-height: 100px; 
+	    margin: 0 auto;
+	  }
+	  .container {
+	    width: 100%;
+	    padding: 0 15px;
+	    text-align: left;
+	  }
   </style>
+  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.9.0/css/bootstrap-slider.css">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -70,7 +82,6 @@
   </script>
 </head>
 <body>
-
 <script>
 function calculate(metrics)
 {
@@ -184,41 +195,45 @@ if (typeof obj != "undefined") {
   </li>
 </ul>
 <div class="tab-content" id="pills-tabContent">
+
   <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-    <h3>Height (inches): <span id="heightv">56</span></h3>
-    <input id="height" data-slider-id='ex1Slider' type="text" data-slider-min="56" data-slider-max="77" data-slider-step="1" data-slider-value="56" />
-    <h3>Waist (inches): <span id="waistv">24</span></h3>
-    <div>
-    (two inches above your belly button)
-    </div>
-    <input id="waist" data-slider-id='ex2Slider' type="text" data-slider-min="24" data-slider-max="50" data-slider-step="1" data-slider-value="24" />
-    <h3>Hips (inches): <span id="hipsv">33</span></h3>
-    <div>
-    (around the fullest part of your hips)
-    </div>
-    <input id="hips" data-slider-id='ex3Slider' type="text" data-slider-min="33" data-slider-max="60" data-slider-step="1" data-slider-value="33" />
-    <h3>Your size:</h3>
+		<div class="measure-content">
+	    <h3>Height (inches): <span id="heightv">56</span></h3>
+	    <input id="height" data-slider-id='ex1Slider' type="text" data-slider-min="56" data-slider-max="77" data-slider-step="1" data-slider-value="56" />
+	    <h3>Waist (inches): <span id="waistv">24</span></h3>
+	    <div class="desc">
+	    (two inches above your belly button)
+	    </div>
+	    <input id="waist" data-slider-id='ex2Slider' type="text" data-slider-min="24" data-slider-max="50" data-slider-step="1" data-slider-value="24" />
+	    <h3>Hips (inches): <span id="hipsv">33</span></h3>
+	    <div class="desc">
+	    (around the fullest part of your hips)
+	    </div>
+	    <input id="hips" data-slider-id='ex3Slider' type="text" data-slider-min="33" data-slider-max="60" data-slider-step="1" data-slider-value="33" />
+	    <h3 style="text-align:center;">Your size:</h3>
+		</div>
     <div id="container"></div>
   </div>
 
-  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-    <h3>Height (cm): <span id="heightvm">142</span></h3>
-    <input id="heightm" data-slider-id='ex4Slider' type="text" data-slider-min="142" data-slider-max="195" data-slider-step="1" data-slider-value="142" />
-    <h3>Waist (cm): <span id="waistvm">60</span></h3>
-    <div>
-    (5 cms above your belly button)
-    </div>
-    <input id="waistm" data-slider-id='ex5Slider' type="text" data-slider-min="60" data-slider-max="127" data-slider-step="1" data-slider-value="60" />
-    <h3>Hips (cm): <span id="hipsvm">83</span></h3>
-    <div>
-    (around the fullest part of your hips)
-    </div>
-    <input id="hipsm" data-slider-id='ex6Slider' type="text" data-slider-min="83" data-slider-max="152" data-slider-step="1" data-slider-value="83" />
-    <h3>Your size:</h3>
-    <div id="container2"></div>
+	  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+	  	<div class="measure-content">
+		    <h3>Height (cm): <span id="heightvm">142</span></h3>
+		    <input id="heightm" data-slider-id='ex4Slider' type="text" data-slider-min="142" data-slider-max="195" data-slider-step="1" data-slider-value="142" />
+		    <h3>Waist (cm): <span id="waistvm">60</span></h3>
+		    <div class="desc">
+		    (5 cms above your belly button)
+		    </div>
+		    <input id="waistm" data-slider-id='ex5Slider' type="text" data-slider-min="60" data-slider-max="127" data-slider-step="1" data-slider-value="60" />
+		    <h3>Hips (cm): <span id="hipsvm">83</span></h3>
+		    <div class="desc">
+		    (around the fullest part of your hips)
+		    </div>
+		    <input id="hipsm" data-slider-id='ex6Slider' type="text" data-slider-min="83" data-slider-max="152" data-slider-step="1" data-slider-value="83" />
+		    <h3 style="text-align:center;">Your size:</h3>
+		</div>
+	    <div id="container2"></div>
+  	</div>
   </div>
-</div>
-</div>
 
 
 <script type="text/javascript">
