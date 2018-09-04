@@ -72,7 +72,7 @@
 	    text-align: left;
 	  }
   </style>
-  
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.9.0/css/bootstrap-slider.css">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -104,7 +104,7 @@ function calculate(metrics)
       $('#waistv').text(waist);
       $('#hipsv').text(hips);
     }
-
+console.log(height, waist, hips);
 var sizes_short = {
     24: [{s: 'S', h1: 33, h2: 39}],
     25: [{s: 'S', h1: 33, h2: 40}],
@@ -170,16 +170,16 @@ if (!metrics) {
   var sizes_tall_m = {};
 
   nums.forEach(value => {
-    sizes_short_m[Math.floor(value * 2.54)] = [];
-    sizes_tall_m[Math.floor(value * 2.54)] = [];
+    sizes_short_m[Math.ceil(value * 2.54)] = [];
+    sizes_tall_m[Math.ceil(value * 2.54)] = [];
     sizes_short[value].forEach(size => {
-      sizes_short_m[Math.floor(value * 2.54)].push({s: size.s, h1: Math.floor(size.h1 * 2.54), h2: Math.floor(size.h2 * 2.54)});
+      sizes_short_m[Math.ceil(value * 2.54)].push({s: size.s, h1: Math.ceil(size.h1 * 2.54), h2: Math.ceil(size.h2 * 2.54)});
     });
     sizes_tall[value].forEach(size => {
-      sizes_tall_m[Math.floor(value * 2.54)].push({s: size.s, h1: Math.floor(size.h1 * 2.54), h2: Math.floor(size.h2 * 2.54)});
+      sizes_tall_m[Math.ceil(value * 2.54)].push({s: size.s, h1: Math.ceil(size.h1 * 2.54), h2: Math.ceil(size.h2 * 2.54)});
     });
   });
-  var obj = (height < Math.floor(64 * 2.54)  ? _u.find(sizes_short_m[waist], function(o) { return (o.h1 <= hips && o.h2 >= hips);} ) : _u.find(sizes_tall_m[waist], function(o) { return (o.h1 <= hips && o.h2 >= hips);} ) );
+  var obj = (height < Math.ceil(64 * 2.54)  ? _u.find(sizes_short_m[waist], function(o) { return (o.h1 <= hips && o.h2 >= hips);} ) : _u.find(sizes_tall_m[waist], function(o) { return (o.h1 <= hips-1 && o.h2 >= hips-1);} ) );
 }
 
 if (typeof obj != "undefined") {
